@@ -12,6 +12,7 @@ Soporte IT · Sistemas · Cloud · IA. Madrid. Disponibilidad inmediata, turnos 
 |---|---|
 | [01 Presentacion](01%20Presentacion) | Mi presentación profesional, en web y en PDF. |
 | [02 Web en AWS (S3 y CloudFront)](02%20Web%20en%20AWS%20%28S3%20y%20CloudFront%29) | El proyecto cloud que aloja esa presentación: cómo está montado y por qué. |
+| [03 Servidor Linux en AWS](03%20Servidor%20Linux%20en%20AWS) | Ubuntu en EC2 con nginx, firewall, usuario sin permisos de administrador y SSH solo con clave. |
 
 ## Perfil
 
@@ -24,7 +25,6 @@ Soporte IT · Sistemas · Cloud · IA. Madrid. Disponibilidad inmediata, turnos 
 
 Se irán añadiendo como carpetas nuevas cuando estén hechos:
 
-- Servidor Linux en la nube (AWS o Azure)
 - Laboratorio de Active Directory
 - Sistema de tickets de soporte (GLPI)
 - Publicación automática con GitHub Actions
