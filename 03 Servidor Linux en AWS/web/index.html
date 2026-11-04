@@ -36,7 +36,7 @@ footer{margin-top:34px;color:var(--mut);font-size:.9rem}
 
   <div class="grid">
     <div class="card" style="animation-delay:.05s"><em>🐧</em><h2>Sistema</h2><p>Ubuntu Server 26.04 LTS en una instancia EC2 t3.micro, región Irlanda.</p></div>
-    <div class="card" style="animation-delay:.15s"><em>🌐</em><h2>Servidor web</h2><p>nginx sirviendo esta página por HTTP en el puerto 80.</p></div>
+    <div class="card" style="animation-delay:.15s"><em>🌐</em><h2>Servidor web</h2><p>nginx en el puerto 80, con CloudFront delante para servir esta página por HTTPS.</p></div>
     <div class="card" style="animation-delay:.25s"><em>🛡️</em><h2>Firewall</h2><p>Grupo de seguridad de AWS y UFW dentro del servidor. Solo están abiertos SSH y HTTP.</p></div>
     <div class="card" style="animation-delay:.35s"><em>🔑</em><h2>Acceso</h2><p>SSH solo con clave. Sin contraseñas, y root no puede entrar con contraseña.</p></div>
     <div class="card" style="animation-delay:.45s"><em>👤</em><h2>Usuarios</h2><p>Usuario diario sin permisos de administrador, con el principio de mínimo privilegio.</p></div>
