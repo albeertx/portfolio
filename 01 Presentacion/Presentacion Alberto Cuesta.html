@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Alberto Cuesta · Presentación</title>
+<style>
+:root{--bg:#0a1020;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.13);--tx:#e8eefc;--mut:#9aa8c7;--a:#38bdf8;--b:#818cf8;--c:#fb923c;--ok:#4ade80}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;margin:0}
+body{background:var(--bg);color:var(--tx);font:clamp(15px,1.6vw,19px)/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;overflow:hidden}
+.bg{position:fixed;inset:0;background:radial-gradient(900px 500px at 12% -10%,rgba(56,189,248,.17),transparent 60%),radial-gradient(800px 500px at 100% 110%,rgba(99,102,241,.15),transparent 60%),linear-gradient(180deg,#0a1020,#0b1324)}
+.bg::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 30% 20%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 30% 20%,#000,transparent 75%)}
+.slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(76px,12vh,100px) clamp(20px,7vw,110px) clamp(76px,11vh,100px);overflow-y:auto;opacity:0;pointer-events:none;transform:translateX(70px);transition:opacity .5s,transform .5s cubic-bezier(.2,.8,.2,1)}
+.slide.on{opacity:1;pointer-events:auto;transform:none}.slide.l{transform:translateX(-70px)}
+.slide>*{max-width:1100px;width:100%}
+.tag{color:var(--c);font-weight:700;font-size:.8em;letter-spacing:.16em;text-transform:uppercase}
+h1{font-size:clamp(2.4rem,8vw,5.2rem);line-height:1.04;margin:.15em 0;font-weight:800}
+h2{font-size:clamp(1.7rem,4.6vw,3rem);line-height:1.1;margin:.15em 0 .6em;font-weight:800}
+h1 span,h2 span{background:linear-gradient(90deg,#7dd3fc,#38bdf8 45%,#818cf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--a);font-size:1.3em;font-weight:600}.lead{color:var(--mut);font-size:1.15em;max-width:720px}
+.grid{display:grid;gap:14px}.g2{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}.g3{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;backdrop-filter:blur(6px)}
+.card h3{margin:0 0 .3em;font-size:1.1em}.card small{color:var(--mut)}.card ul{margin:.6em 0 0;padding-left:1.1em}.card li{margin:.25em 0}
+.num{font-size:clamp(2.4rem,6vw,4rem);font-weight:800;color:var(--a);line-height:1}
+.tl{position:relative;padding-left:26px;border-left:2px solid var(--line);display:grid;gap:18px}
+.tl div{position:relative}.tl div::before{content:"";position:absolute;left:-34px;top:.45em;width:14px;height:14px;border-radius:50%;background:var(--a);box-shadow:0 0 0 5px rgba(56,189,248,.2)}
+.tl b{display:block}.tl small{color:var(--mut)}
+.pill{display:inline-block;background:rgba(56,189,248,.14);color:var(--a);border-radius:10px;padding:6px 12px;margin:3px 3px 3px 0;font-size:.9em}
+.flow{display:flex;align-items:center;gap:6px;margin:10px 0}
+.node{flex:1;text-align:center;border:1px solid var(--line);border-radius:16px;padding:16px 4px;background:var(--card);font-weight:700}.node small{display:block;color:var(--mut);font-weight:400;font-size:.75em}
+.node:nth-child(3){border-color:var(--a)}
+.arr{width:28px;height:4px;border-radius:2px;background:var(--line);position:relative;overflow:hidden;flex:none}.arr::after{content:"";position:absolute;left:-10px;width:10px;height:4px;background:var(--a);animation:run 1.2s linear infinite}@keyframes run{to{left:28px}}
+a.big{display:block;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:10px 0;color:var(--tx);text-decoration:none;font-weight:700;transition:.25s}a.big:hover{border-color:var(--a);transform:translateX(6px)}a.big small{display:block;color:var(--mut);font-weight:400}
+.top{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;padding:calc(12px + env(safe-area-inset-top)) 18px 8px;font-weight:700}.top i{font-style:normal;color:var(--a)}.top a{color:var(--mut);font-weight:500;font-size:.85em;text-decoration:none}
+.bar{position:fixed;left:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--a),var(--b));transition:width .5s;z-index:6}
+nav{position:fixed;z-index:6;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:5px;padding:10px 8px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 45%)}
+nav button{flex:1;max-width:96px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:7px 2px;color:var(--mut);font:inherit;font-size:.62rem;cursor:pointer;transition:.25s}
+nav button em{display:block;font-style:normal;font-size:1.2rem}
+nav button.on{color:var(--tx);border-color:var(--a);background:rgba(56,189,248,.15);transform:translateY(-3px)}
+@media (max-width:560px){nav button:not(.on) span{display:none}}
+@media (min-width:900px){nav{top:10px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);padding:6px;gap:2px;border:1px solid var(--line);border-radius:18px;background:rgba(10,16,32,.8);backdrop-filter:blur(10px)}
+nav button{max-width:none;padding:9px 14px;font-size:.85rem;border:0;background:transparent}nav button em{display:inline;margin-right:6px;font-size:1rem}nav button.on{transform:none;background:rgba(56,189,248,.18)}}
+.dense .card{padding:14px 18px}.dense .card ul{margin:.3em 0 0}.dense .card li{margin:.1em 0}.dense h2{margin-bottom:.35em}.dense .g2{gap:12px}@media (min-width:900px){.dense .g2{grid-template-columns:repeat(4,1fr)}.dense .card{font-size:.88em}}
+@media print{@page{size:1280px 720px;margin:0}body{overflow:visible;height:auto;font-size:17px}.bg{position:absolute}
+.slide{position:relative;inset:auto;width:1280px;height:720px;opacity:1;transform:none;page-break-after:always;break-after:page;overflow:hidden;padding:60px 90px}
+.top,.bar,nav{display:none}.arr::after{animation:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head>
+<body><div class="bg"></div>
+<div class="top"><span>Alberto<i>.</i>cloud</span><span></span></div>
+
+<section class="slide on">
+  <span class="tag">Madrid · Disponibilidad inmediata</span>
+  <h1>Alberto <span>Cuesta Montero</span></h1>
+  <div class="sub">Soporte IT · Sistemas · Cloud · IA</div>
+  <p class="lead">Presentación de mi perfil profesional.</p>
+</section>
+
+<section class="slide">
+  <span class="tag">Perfil</span><h2>Soporte, sistemas y <span>cloud</span></h2>
+  <p class="lead">Base sólida en redes y seguridad, Máster en Cloud Computing con AWS y Azure, y proyectos propios de automatización con IA.</p>
+  <div class="grid g3" style="margin-top:22px">
+    <div class="card"><div class="num">3</div><small>titulaciones: SMIR, DAM y Máster en Cloud</small></div>
+    <div class="card"><div class="num">2</div><small>prácticas en empresa</small></div>
+    <div class="card"><div class="num">4</div><small>proyectos propios</small></div>
+  </div>
+</section>
+
+<section class="slide">
+  <span class="tag">Formación</span><h2>Mi <span>camino</span></h2>
+  <div class="tl">
+    <div><b>Grado Medio en Sistemas Microinformáticos y Redes (SMIR)</b><small>CampusFP · 2020 – 2022</small></div>
+    <div><b>Grado Superior en Desarrollo de Aplicaciones Multiplataforma (DAM)</b><small>MEDAC, Fuenlabrada · 2022 – 2024</small></div>
+    <div><b>Máster en Cloud Computing: AWS y Azure</b><small>UNIR · 2025 – 2026</small></div>
+    <div><b>Cursos de Claude y de Microsoft Copilot</b><small>Udemy · en curso · 2026</small></div>
+  </div>
+</section>
+
+<section class="slide">
+  <span class="tag">Experiencia</span><h2>Prácticas <span>reales</span></h2>
+  <div class="grid g2">
+    <div class="card"><h3>Ciberseguridad y desarrollo web</h3><small>Comercios Cerca · Fuenlabrada · 2024</small><ul><li>Firewalls, DMZ y VPN.</li><li>Antivirus corporativo y contenidos web.</li><li>Web corporativa y su base de datos.</li><li>Mantenimiento y soporte de la plataforma.</li></ul></div>
+    <div class="card"><h3>Redes e infraestructura</h3><small>Academia Euler · Griñón · 2021</small><ul><li>Red y servidores para las aulas.</li><li>Equipos listos para docentes y alumnado.</li></ul></div>
+  </div>
+</section>
+
+<section class="slide">
+  <span class="tag">Habilidades</span><h2>Lo que <span>sé hacer</span></h2>
+  <div class="grid g2">
+    <div class="card"><h3>Soporte</h3><span class="pill">Help Desk</span><span class="pill">Windows 10/11</span><span class="pill">Microsoft 365</span><span class="pill">Active Directory</span></div>
+    <div class="card"><h3>Redes y seguridad</h3><span class="pill">TCP/IP</span><span class="pill">DNS</span><span class="pill">DHCP</span><span class="pill">Firewalls</span><span class="pill">DMZ</span><span class="pill">VPN</span></div>
+    <div class="card"><h3>Sistemas y cloud</h3><span class="pill">Windows Server</span><span class="pill">Linux</span><span class="pill">AWS</span><span class="pill">Azure</span></div>
+    <div class="card"><h3>Desarrollo</h3><span class="pill">Python</span><span class="pill">Java</span><span class="pill">SQL</span><span class="pill">HTML, CSS y JS</span><span class="pill">Git</span></div>
+    <div class="card"><h3>IA y automatización</h3><span class="pill">IA generativa</span><span class="pill">Claude Cowork</span><span class="pill">Copilot</span><span class="pill">Higgsfield</span><span class="pill">ElevenLabs</span></div>
+    <div class="card"><h3>Idiomas</h3><span class="pill">Español: nativo</span><span class="pill">Inglés: B2</span></div>
+  </div>
+</section>
+
+<section class="slide dense">
+  <span class="tag">Proyectos</span><h2>Lo que <span>construyo</span></h2>
+  <div class="grid g2">
+    <div class="card"><h3>Web en AWS</h3><small>Terminado</small><ul><li>S3 privado + CloudFront con HTTPS.</li><li>Alerta de presupuesto de gasto cero.</li></ul></div>
+    <div class="card"><h3>Automatización con IA</h3><small>En curso · 2026</small><ul><li>Aplicaciones de gestión con Claude Cowork.</li><li>Panel y agente de candidaturas.</li></ul></div>
+    <div class="card"><h3>Vídeos con IA</h3><small>En curso · 2026</small><ul><li>Imagen y vídeo con Higgsfield.</li><li>Voz con ElevenLabs, edición con CapCut.</li></ul></div>
+    <div class="card"><h3>Web para una academia</h3><small>En curso · 2026</small><ul><li>Diseño y desarrollo de una web nueva.</li></ul></div>
+  </div>
+  <div class="card" style="margin-top:14px"><h3>Próximos proyectos <small>(planificados)</small></h3><span class="pill">Web para una peluquería</span><span class="pill">Servidor Linux en AWS o Azure</span><span class="pill">Laboratorio de Active Directory</span><span class="pill">Sistema de tickets (GLPI)</span><span class="pill">Publicación automática con GitHub Actions</span><span class="pill">Terraform</span><span class="pill">Red segura: firewall, DMZ y VPN</span></div>
+</section>
+
+<section class="slide">
+  <span class="tag">Proyecto cloud</span><h2>Cómo llega la web <span>hasta ti</span></h2>
+  <div class="flow"><div class="node">Visitante<small>navegador</small></div><span class="arr"></span><div class="node">CloudFront<small>HTTPS + caché</small></div><span class="arr"></span><div class="node">Amazon S3<small>bucket privado</small></div></div>
+  <div class="grid g3" style="margin-top:14px">
+    <div class="card">El bucket es <b>privado</b>.</div>
+    <div class="card">Solo CloudFront lo lee, con control de acceso de origen (OAC).</div>
+    <div class="card">Alerta de presupuesto de gasto cero.</div>
+  </div>
+</section>
+
+<section class="slide">
+  <span class="tag">Contacto</span><h2>¿Hablamos? <span>Estoy disponible ya</span></h2>
+  <div class="grid g3" style="margin-bottom:12px">
+    <div class="card">Disponibilidad <b>inmediata</b></div><div class="card">Turnos, incluido <b>24x7</b></div><div class="card">Carnet B y <b>coche propio</b></div>
+  </div>
+  <a class="big" href="mailto:albertocuesta02@gmail.com?subject=Oportunidad%20IT">✉️ Correo<small>albertocuesta02@gmail.com</small></a>
+  <a class="big" href="https://www.linkedin.com/in/alberto-cuesta-montero" target="_blank" rel="noopener">💼 LinkedIn<small>Alberto Cuesta Montero</small></a>
+</section>
+
+<div class="bar" id="bar"></div>
+<nav id="nav"></nav>
+<script>
+var S=document.querySelectorAll('.slide'),c=0,bar=document.getElementById('bar'),nav=document.getElementById('nav');
+var N=[["🏠","Portada"],["👤","Perfil"],["🎓","Formación"],["💼","Experiencia"],["🛠️","Habilidades"],["🚀","Proyectos"],["☁️","Cloud"],["📬","Contacto"]];
+N.forEach(function(n,i){var b=document.createElement('button');b.innerHTML='<em>'+n[0]+'</em><span>'+n[1]+'</span>';b.onclick=function(){go(i)};nav.appendChild(b)});
+function go(i){if(i<0||i>=S.length)return;S.forEach(function(s,k){s.classList.remove('on','l');if(k<i)s.classList.add('l')});S[i].classList.add('on');S[i].scrollTop=0;c=i;
+ bar.style.width=((i+1)/S.length*100)+'%';[].forEach.call(nav.children,function(x,k){x.classList.toggle('on',k===i)});try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')go(c+1);if(e.key==='ArrowLeft'||e.key==='PageUp')go(c-1)});
+var sx=null;document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+document.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>70)go(c+(d<0?1:-1));sx=null});
+var h=parseInt((location.hash||'').slice(1),10);go(h>0&&h<=S.length?h-1:0);
+</script></body></html>
