@@ -4,7 +4,9 @@ Proyecto de sistemas: un servidor Ubuntu en la nube con servidor web, firewall y
 
 **Estado:** terminado y documentado. Para no generar gasto, la instancia y la distribución de CloudFront se eliminaron al acabar, así que la dirección del servidor ya no está activa. Quedan aquí los comandos, las pruebas y las capturas.
 
-La página que servía el servidor está en [web/index.html](web/index.html).
+**Ver la página en vivo:** https://albeertx.github.io/portfolio/03%20Servidor%20Linux%20en%20AWS/web/
+
+El código de la página está en [web/index.html](web/index.html).
 
 ## Qué hice
 

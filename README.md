@@ -10,11 +10,13 @@ También alojada en AWS (S3 y CloudFront): https://dqy9jq042m8oh.cloudfront.net
 
 ## Empieza aquí
 
-| Carpeta | Qué hay dentro |
-|---|---|
-| [01 Presentacion](01%20Presentacion) | Mi presentación profesional, en web y en PDF. |
-| [02 Web en AWS (S3 y CloudFront)](02%20Web%20en%20AWS%20%28S3%20y%20CloudFront%29) | El proyecto cloud que aloja esa presentación: cómo está montado y por qué. |
-| [03 Servidor Linux en AWS](03%20Servidor%20Linux%20en%20AWS) | Ubuntu en EC2 con nginx, firewall, usuario sin permisos de administrador y SSH solo con clave. |
+| Proyecto | Qué hay dentro | Ver la web |
+|---|---|---|
+| [01 Presentacion](01%20Presentacion) | Mi presentación profesional, en web y en PDF. | [Abrir](https://albeertx.github.io/portfolio/01%20Presentacion/Presentacion%20Alberto%20Cuesta.html) |
+| [02 Web en AWS (S3 y CloudFront)](02%20Web%20en%20AWS%20%28S3%20y%20CloudFront%29) | El proyecto cloud que aloja esa presentación: cómo está montado y por qué. | [Abrir](https://dqy9jq042m8oh.cloudfront.net) |
+| [03 Servidor Linux en AWS](03%20Servidor%20Linux%20en%20AWS) | Ubuntu en EC2 con nginx, firewall, usuario sin permisos de administrador y SSH solo con clave. | [Abrir](https://albeertx.github.io/portfolio/03%20Servidor%20Linux%20en%20AWS/web/) |
+
+Cada proyecto con página web tendrá aquí su enlace "Abrir", que se ve funcionando sin tener que leer el código.
 
 ## Perfil
 
