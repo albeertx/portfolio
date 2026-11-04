@@ -13,7 +13,7 @@ Proyecto de sistemas: un servidor Ubuntu en la nube con servidor web, firewall y
 - Comprobé que el SSH **no admite contraseña** y que root no puede entrar con contraseña.
 - Instalé las actualizaciones pendientes, incluidas las de seguridad.
 - Cambié la página de bienvenida de nginx por una propia.
-- Puse **CloudFront** por delante del servidor para servir la web por **HTTPS** con el certificado de , sin comprar dominio. El HTTP se redirige solo a HTTPS.
+- Puse **CloudFront** por delante del servidor para servir la web por **HTTPS** con el certificado de `*.cloudfront.net`, sin comprar dominio. El HTTP se redirige solo a HTTPS.
 
 ## Comandos
 
@@ -72,7 +72,7 @@ sudo apt upgrade -y
 | `sudo ls` como `alberto` | Denegado: no está en sudoers |
 | `http://IP_PUBLICA` desde fuera | Responde 200 con mi página |
 | HTTPS (443) directo al servidor | Cerrado, como estaba previsto |
-|  por CloudFront | Responde 200 con candado; HTTP redirige a HTTPS (301) |
+| `https://` por CloudFront | Responde 200 con candado; HTTP redirige a HTTPS (301) |
 
 ## HTTPS con CloudFront
 
