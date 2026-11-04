@@ -159,7 +159,7 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
     <div class="card">Disponibilidad <b>inmediata</b></div><div class="card">Turnos, incluido <b>24x7</b></div><div class="card">Carnet B y <b>coche propio</b></div>
   </div>
   <a class="big" href="tel:+34618117257">📞 Teléfono<small>+34 618 11 72 57</small></a>
-  <a class="big" id="mail" href="mailto:albertocuesta02@gmail.com?subject=Oportunidad%20IT" title="Pulsa para copiar el correo">✉️ Correo<small>albertocuesta02@gmail.com</small></a>
+  <a class="big" id="mail" href="mailto:albertocuesta02@gmail.com?subject=Oportunidad%20IT" title="Copia el correo y abre un mensaje nuevo">✉️ Correo<small>albertocuesta02@gmail.com</small></a>
   <a class="big" href="https://github.com/albeertx/portfolio" target="_blank" rel="noopener">🐙 GitHub<small>github.com/albeertx/portfolio</small></a>
   <a class="big" href="https://www.linkedin.com/in/alberto-cuesta-montero" target="_blank" rel="noopener">💼 LinkedIn<small>Alberto Cuesta Montero</small></a>
 </section>
@@ -178,7 +178,7 @@ document.addEventListener('touchend',function(e){if(sx===null)return;var d=e.cha
 var h=parseInt((location.hash||'').slice(1),10);go(h>0&&h<=S.length?h-1:0);
 
 var mail=document.getElementById('mail'),mt='albertocuesta02@gmail.com';
-mail.addEventListener('click',function(e){e.preventDefault();var sm=mail.querySelector('small');
+mail.addEventListener('click',function(){var sm=mail.querySelector('small');
  function ok(){sm.textContent='¡Copiado al portapapeles!';sm.style.color='#5eead4';clearTimeout(mail._t);mail._t=setTimeout(function(){sm.textContent=mt;sm.style.color=''},2000)}
  function old(){var t=document.createElement('textarea');t.value=mt;t.style.cssText='position:fixed;opacity:0';document.body.appendChild(t);t.select();try{document.execCommand('copy')}catch(x){}document.body.removeChild(t);ok()}
  if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(mt).then(ok,old)}else{old()}});
