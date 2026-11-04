@@ -33,7 +33,13 @@ Visitante  ──HTTPS──▶  CloudFront  ──OAC──▶  S3 (privado)
 
 ## Capturas
 
-Carpeta [capturas](capturas): bucket privado, distribución de CloudFront y la web abierta. _(pendiente de añadir)_
+En la carpeta [capturas](capturas):
+
+- [bucket-privado.png](capturas/bucket-privado.png): el bucket de S3 con "Bloquear todo el acceso público" activado.
+- [cloudfront-origen-oac.png](capturas/cloudfront-origen-oac.png): el origen de CloudFront (el bucket de S3) con su control de acceso de origen (OAC).
+- [web-publicada-https.png](capturas/web-publicada-https.png): la presentación abierta desde la dirección de CloudFront, por HTTPS.
+
+Mi ID de cuenta de AWS no sale en ninguna captura: están recortadas a propósito.
 
 ## Cómo borrar todo
 

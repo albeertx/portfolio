@@ -2,6 +2,10 @@
 
 Proyecto de sistemas: un servidor Ubuntu en la nube con servidor web, firewall y acceso seguro por clave.
 
+**Estado:** terminado y documentado. Para no generar gasto, la instancia y la distribución de CloudFront se eliminaron al acabar, así que la dirección del servidor ya no está activa. Quedan aquí los comandos, las pruebas y las capturas.
+
+La página que servía el servidor está en [web/index.html](web/index.html).
+
 ## Qué hice
 
 - Lancé una instancia **EC2** `t3.micro` con **Ubuntu Server 26.04 LTS** en la región `eu-west-1` (Irlanda).
