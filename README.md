@@ -2,7 +2,9 @@
 
 Soporte IT · Sistemas · Cloud · IA. Madrid. Disponibilidad inmediata, turnos incluido 24x7.
 
-**Presentación en vivo:** https://dqy9jq042m8oh.cloudfront.net
+**Presentación en vivo:** https://albeertx.github.io/portfolio/
+
+También alojada en AWS (S3 y CloudFront): https://dqy9jq042m8oh.cloudfront.net
 
 ---
 
