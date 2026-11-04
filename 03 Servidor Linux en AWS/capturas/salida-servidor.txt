@@ -1,0 +1,27 @@
+﻿Description:	Ubuntu 26.04.1 LTS
+
+● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/usr/lib/systemd/system/nginx.service; enabled; preset: enabled)
+     Active: active (running) since Wed 2026-11-04 16:56:54 UTC; 5h 20min ago
+ Invocation: 9a23c265bfd74c88af97c0972a48eb3e
+       Docs: man:nginx(8)
+    Process: 17765 ExecStartPre=/usr/sbin/nginx -t -q -g daemon on; master_process on; (code=exited, status=0/SUCCESS)
+
+Status: active
+Logging: on (low)
+Default: deny (incoming), allow (outgoing), disabled (routed)
+New profiles: skip
+
+To                         Action      From
+--                         ------      ----
+22/tcp (OpenSSH)           ALLOW IN    Anywhere                  
+80/tcp (Nginx HTTP)        ALLOW IN    Anywhere                  
+22/tcp (OpenSSH (v6))      ALLOW IN    Anywhere (v6)             
+80/tcp (Nginx HTTP (v6))   ALLOW IN    Anywhere (v6)             
+
+
+permitrootlogin prohibit-password
+pubkeyauthentication yes
+passwordauthentication no
+
+uid=1001(alberto) gid=1001(alberto) groups=1001(alberto),100(users)

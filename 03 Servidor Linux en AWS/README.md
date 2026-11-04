@@ -84,7 +84,14 @@ El servidor solo escucha en el puerto 80. CloudFront recibe las visitas por HTTP
 
 ## Capturas
 
-Carpeta [capturas](capturas): grupo de seguridad, SSH, estado de nginx, UFW y la prueba de `sudo`. _(pendiente de añadir)_
+En la carpeta [capturas](capturas):
+
+- [grupo-seguridad.png](capturas/grupo-seguridad.png): reglas de entrada de AWS. Mi IP está tapada a propósito.
+- [pagina-https.png](capturas/pagina-https.png): la página abierta por HTTPS.
+- [salida-servidor.txt](capturas/salida-servidor.txt): salida real de los comandos en el servidor: versión de Ubuntu, estado de nginx, UFW, configuración del SSH y el usuario `alberto`.
+- [prueba-sudo-alberto.txt](capturas/prueba-sudo-alberto.txt): `alberto` entra por SSH y `sudo` se lo deniega.
+
+Las pruebas del servidor están en texto, no en imagen, porque son la salida literal de los comandos.
 
 ## Seguridad
 
