@@ -92,10 +92,13 @@ En la carpeta [capturas](capturas):
 
 - [grupo-seguridad.png](capturas/grupo-seguridad.png): reglas de entrada de AWS. Mi IP está tapada a propósito.
 - [pagina-https.png](capturas/pagina-https.png): la página abierta por HTTPS.
-- [salida-servidor.txt](capturas/salida-servidor.txt): salida real de los comandos en el servidor: versión de Ubuntu, estado de nginx, UFW, configuración del SSH y el usuario `alberto`.
-- [prueba-sudo-alberto.txt](capturas/prueba-sudo-alberto.txt): `alberto` entra por SSH y `sudo` se lo deniega.
+- [terminal-nginx.png](capturas/terminal-nginx.png): nginx activo y en marcha.
+- [terminal-ufw.png](capturas/terminal-ufw.png): firewall UFW activo, con solo el 22 (SSH) y el 80 (HTTP) abiertos.
+- [terminal-ssh-seguridad.png](capturas/terminal-ssh-seguridad.png): SSH solo con clave, sin contraseña y sin root con contraseña.
+- [terminal-usuario-sin-sudo.png](capturas/terminal-usuario-sin-sudo.png): el usuario `alberto` entra por SSH y `sudo` se lo deniega.
+- [salida-servidor.txt](capturas/salida-servidor.txt) y [prueba-sudo-alberto.txt](capturas/prueba-sudo-alberto.txt): las mismas pruebas en texto, de la primera instalación.
 
-Las pruebas del servidor están en texto, no en imagen, porque son la salida literal de los comandos.
+Las capturas del terminal son ventanas reales. Las hice sobre una segunda instancia, montada con los mismos comandos de este README y borrada después. En ellas uso un alias (`servidor-linux`) para no enseñar la IP ni la ruta de la clave.
 
 ## Seguridad
 
