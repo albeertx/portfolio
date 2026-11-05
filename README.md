@@ -1,5 +1,7 @@
 # Alberto Cuesta Montero
 
+[![Mi presentación interactiva](og-image.png)](https://albeertx.github.io/portfolio/)
+
 Soporte IT · Sistemas · Cloud · IA. Madrid. Disponibilidad inmediata, turnos incluido 24x7.
 
 **Presentación en vivo:** https://albeertx.github.io/portfolio/

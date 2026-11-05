@@ -2,6 +2,11 @@
 <html lang="es"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Alberto Cuesta · Presentación</title>
+<meta name="description" content="Alberto Cuesta Montero · Soporte IT, sistemas y cloud. Madrid, disponibilidad inmediata.">
+<meta property="og:type" content="website"><meta property="og:title" content="Alberto Cuesta Montero · Soporte IT, Sistemas y Cloud">
+<meta property="og:description" content="Mi perfil, mis proyectos cloud en AWS y mi contacto, en una presentación interactiva.">
+<meta property="og:url" content="https://albeertx.github.io/portfolio/"><meta property="og:image" content="https://albeertx.github.io/portfolio/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://albeertx.github.io/portfolio/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#06080f;--card:rgba(255,255,255,.045);--line:rgba(255,255,255,.11);--tx:#eef3ff;--mut:#9aa7c4;--a:#38bdf8;--b:#818cf8;--c:#fb923c;--t:#2dd4bf;--ok:#4ade80;
@@ -16,10 +21,10 @@ body{counter-reset:s;background:var(--bg);color:var(--tx);font:clamp(15px,1.5vw,
 @keyframes drift{to{transform:translate(14vmax,10vmax) scale(1.15)}}
 body::after{content:"";position:fixed;inset:0;z-index:7;pointer-events:none;opacity:.07;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>")}
 /* diapositivas */
-.slide{counter-increment:s;position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(84px,13vh,110px) clamp(22px,8vw,130px) clamp(84px,12vh,106px);overflow-y:auto;opacity:0;pointer-events:none;transform:translateX(90px) scale(.985);filter:blur(6px);transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1),filter .6s}
+.slide{counter-increment:s;position:fixed;inset:0;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;padding:clamp(84px,13vh,110px) clamp(22px,8vw,130px) calc(clamp(104px,14vh,120px) + env(safe-area-inset-bottom));overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;opacity:0;pointer-events:none;transform:translateX(90px) scale(.985);filter:blur(6px);transition:opacity .6s,transform .7s cubic-bezier(.2,.8,.2,1),filter .6s}
 .slide.on{opacity:1;pointer-events:auto;transform:none;filter:none}.slide.l{transform:translateX(-90px) scale(.985)}
 .slide::before{content:counter(s,decimal-leading-zero);position:fixed;right:4vw;bottom:5vh;font:700 clamp(8rem,26vw,22rem)/.8 var(--disp);letter-spacing:-.06em;color:transparent;-webkit-text-stroke:1.5px rgba(255,255,255,.13);pointer-events:none;z-index:0}
-.slide>*{max-width:1120px;width:100%;position:relative;z-index:1}.slide>.lead{align-self:flex-start;margin-left:calc((100% - min(100%,1120px))/2)}
+.slide>*{max-width:1120px;width:100%;position:relative;z-index:1;flex-shrink:0}.slide>:first-child{margin-top:auto}.slide>:last-child{margin-bottom:auto}.slide>.lead{align-self:flex-start;margin-left:calc((100% - min(100%,1120px))/2)}
 .slide.on>*{animation:up .8s cubic-bezier(.2,.8,.2,1) backwards}
 .slide.on>*:nth-child(2){animation-delay:.08s}.slide.on>*:nth-child(3){animation-delay:.16s}.slide.on>*:nth-child(4){animation-delay:.24s}.slide.on>*:nth-child(5){animation-delay:.32s}.slide.on>*:nth-child(n+6){animation-delay:.4s}
 @keyframes up{from{opacity:0;transform:translateY(26px)}}
@@ -65,7 +70,7 @@ a.big::after{content:"↗";position:absolute;right:22px;top:50%;transform:transl
 a.big:hover{border-color:var(--t);transform:translateX(8px);background:rgba(45,212,191,.08)}a.big:hover::after{color:var(--t);transform:translate(4px,-62%)}
 a.big small{color:var(--mut);font:400 .78em var(--mono);margin-top:2px}
 /* barra superior, progreso y navegación */
-.top{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top)) 22px 8px;font:700 1.05em var(--disp);letter-spacing:-.02em}.top i{font-style:normal;color:var(--t)}.top a{color:var(--mut);font-weight:500;font-size:.85em;text-decoration:none}
+.top{background:linear-gradient(180deg,rgba(6,8,15,.94) 55%,transparent);pointer-events:none;padding-bottom:22px!important;position:fixed;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;padding:calc(14px + env(safe-area-inset-top)) 22px 8px;font:700 1.05em var(--disp);letter-spacing:-.02em}.top i{font-style:normal;color:var(--t)}.top a{color:var(--mut);font-weight:500;font-size:.85em;text-decoration:none}
 .bar{position:fixed;left:0;bottom:0;height:3px;background:linear-gradient(90deg,var(--t),var(--a),var(--b));box-shadow:0 0 14px var(--t);transition:width .6s cubic-bezier(.2,.8,.2,1);z-index:8}
 nav{position:fixed;z-index:6;left:0;right:0;bottom:0;display:flex;justify-content:center;gap:5px;padding:10px 8px calc(10px + env(safe-area-inset-bottom));background:linear-gradient(transparent,var(--bg) 50%)}
 nav button{flex:1;max-width:96px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:7px 2px;color:var(--mut);font:inherit;font-size:.62rem;cursor:pointer;transition:.3s}
