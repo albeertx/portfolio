@@ -85,9 +85,13 @@ Actualicé la confianza del rol con ese valor exacto y quité el paso temporal. 
 | HTML servido por CloudFront frente al del repositorio | Idéntico |
 | Antes del cambio de confianza | Falló al asumir el rol; no se tocó S3 |
 
-## Pendiente
+## Capturas
 
-- Capturas del workflow en verde y del rol (con el ID de cuenta tapado).
+- [workflow-correcto.jpg](capturas/workflow-correcto.jpg): el workflow en verde, con conectar con AWS, subir a S3 y vaciar la caché de CloudFront.
+
+No subo capturas de la consola de AWS porque muestran el ID de cuenta.
+
+**Ver la página en vivo:** https://albeertx.github.io/portfolio/04%20Publicacion%20automatica%20GitHub%20Actions/web/
 
 ## Seguridad
 
