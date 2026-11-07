@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sistema de tickets GLPI · Alberto Cuesta</title>
+<style>
+:root{--bg:#0a1020;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.13);--tx:#e8eefc;--mut:#9aa8c7;--a:#38bdf8;--b:#818cf8;--ok:#4ade80;--or:#fb923c}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--tx);font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(900px 500px at 12% -10%,rgba(56,189,248,.17),transparent 60%),radial-gradient(800px 500px at 100% 110%,rgba(99,102,241,.15),transparent 60%),linear-gradient(180deg,#0a1020,#0b1324);background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 30% 15%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 30% 15%,#000,transparent 75%)}
+main{position:relative;max-width:980px;margin:0 auto;padding:40px 18px 60px}
+.tag{display:block;margin-bottom:10px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--or);font-weight:700}
+.live{display:inline-flex;gap:8px;align-items:center;font-size:.85rem;color:var(--ok);border:1px solid rgba(74,222,128,.4);padding:4px 12px;border-radius:99px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pu 1.6s infinite}
+@keyframes pu{0%{box-shadow:0 0 0 0 rgba(74,222,128,.7)}100%{box-shadow:0 0 0 10px rgba(74,222,128,0)}}
+h1{font-size:clamp(2.2rem,8vw,4rem);line-height:1.05;margin:.3em 0 .15em;font-weight:800}
+h1 span{background:linear-gradient(90deg,#7dd3fc,#38bdf8 45%,#818cf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+h3{font-size:1.3rem;margin:44px 0 6px}
+.lead{color:var(--mut);font-size:1.15rem;max-width:660px}
+.note{color:var(--mut);font-size:.95rem;border-left:3px solid var(--or);padding:2px 0 2px 12px;margin:20px 0;max-width:700px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:28px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;backdrop-filter:blur(6px);transition:.25s;animation:in .6s backwards}
+.card:hover{border-color:var(--a);transform:translateY(-3px)}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.card em{font-style:normal;font-size:1.6rem}
+.card h2{font-size:1.1rem;margin:.3em 0 .2em}
+.card p{margin:0;color:var(--mut);font-size:.95rem}
+.term{background:rgba(8,13,26,.8);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font:14px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-x:auto;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.term .dots{display:flex;gap:7px;margin-bottom:10px}.term .dots i{width:11px;height:11px;border-radius:50%;background:#475569}.term .dots i:nth-child(1){background:#f87171}.term .dots i:nth-child(2){background:#fbbf24}.term .dots i:nth-child(3){background:#4ade80}
+.term u{text-decoration:none;color:var(--ok)}.term .o{color:var(--mut)}
+.shots{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));margin-top:16px}
+.shots a{display:block;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--tx);transition:.25s}
+.shots a:hover{border-color:var(--a);transform:translateY(-3px)}
+.shots img{display:block;width:100%;height:auto;background:#0b1324}
+.shots span{display:block;padding:10px 14px;font-size:.9rem;color:var(--mut)}
+.btn{display:inline-block;margin-top:22px;padding:13px 20px;border-radius:14px;font-weight:700;text-decoration:none;color:#06101f;background:linear-gradient(90deg,var(--a),var(--b));transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(56,189,248,.35)}
+footer{margin-top:34px;color:var(--mut);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{opacity:1}}
+</style></head>
+<body><main>
+  <span class="tag">Proyecto · Soporte IT</span>
+  <span class="live">Probado en local</span>
+  <h1>Sistema de tickets <span>GLPI</span></h1>
+  <p class="lead">Un Help Desk montado desde cero en una máquina virtual Ubuntu: entidades, categorías, usuarios, tickets y guías de resolución de problemas.</p>
+  <p class="note">Todos los datos son de ejemplo: las entidades, los usuarios y los tickets son ficticios y llevan la marca "[EJEMPLO]". Coste: 0 €.</p>
+
+  <div class="grid">
+    <div class="card" style="animation-delay:.05s"><em>🖥️</em><h2>Máquina virtual</h2><p>VirtualBox con Ubuntu Server 26.04.1 LTS: 2 GB de RAM, 1 CPU y 20 GB de disco.</p></div>
+    <div class="card" style="animation-delay:.15s"><em>⚙️</em><h2>Servidor</h2><p>Apache 2.4.66, MariaDB 11.8.6 y PHP 8.5.4 con las extensiones que pide GLPI.</p></div>
+    <div class="card" style="animation-delay:.25s"><em>🎫</em><h2>GLPI 12.0.1</h2><p>Instalado desde la consola, con base de datos y usuario de base de datos propios.</p></div>
+    <div class="card" style="animation-delay:.35s"><em>🏢</em><h2>Organización</h2><p>3 entidades (Empresa Demo, Sede Madrid y Sede Barcelona) y 6 categorías.</p></div>
+    <div class="card" style="animation-delay:.45s"><em>👥</em><h2>Usuarios y perfiles</h2><p>5 usuarios ficticios sin contraseña, con los perfiles de GLPI: Self-Service, Hotliner y Technician.</p></div>
+    <div class="card" style="animation-delay:.55s"><em>📚</em><h2>Guías</h2><p>4 guías en la base de conocimiento: impresora, VPN, contraseña olvidada y equipo lento.</p></div>
+  </div>
+
+  <h3>8 tickets de ejemplo</h3>
+  <p class="lead">En todos los estados: nuevo, en curso, en espera, resuelto y cerrado. Con seguimiento y solución.</p>
+
+  <div class="term">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <div><u>$</u> php -v | head -1</div>
+    <div class="o">PHP 8.5.4 (cli) (built: Oct 19 2026 14:35:18) (NTS)</div>
+    <div><u>$</u> apache2 -v | head -1</div>
+    <div class="o">Server version: Apache/2.4.66 (Ubuntu)</div>
+    <div><u>$</u> sudo -u www-data php bin/console db:install --db-name=glpi --db-user=glpi ...</div>
+    <div class="o">&gt; Installation done.</div>
+    <div><u>$</u> sudo -u www-data php bin/console user:disable tech</div>
+    <div class="o">Usuario deshabilitado</div>
+  </div>
+
+  <h3>Capturas</h3>
+  <div class="shots">
+    <a href="../capturas/04-lista-tickets.png" target="_blank" rel="noopener"><img src="../capturas/04-lista-tickets.png" alt="Lista de los 8 tickets de ejemplo" loading="lazy"><span>Los 8 tickets de ejemplo</span></a>
+    <a href="../capturas/05-ticket-impresora-resuelto.png" target="_blank" rel="noopener"><img src="../capturas/05-ticket-impresora-resuelto.png" alt="Ticket de la impresora resuelto" loading="lazy"><span>Ticket resuelto, con seguimiento y solución</span></a>
+    <a href="../capturas/10-base-conocimiento.png" target="_blank" rel="noopener"><img src="../capturas/10-base-conocimiento.png" alt="Base de conocimiento con las 4 guías" loading="lazy"><span>Base de conocimiento con las 4 guías</span></a>
+    <a href="../capturas/03-glpi-login.png" target="_blank" rel="noopener"><img src="../capturas/03-glpi-login.png" alt="Pantalla de acceso de GLPI" loading="lazy"><span>Pantalla de acceso de GLPI</span></a>
+  </div>
+
+  <a class="btn" href="https://github.com/albeertx/portfolio/tree/main/05%20Sistema%20de%20tickets%20GLPI" target="_blank" rel="noopener">Ver el proyecto en GitHub</a>
+  <footer>Alberto Cuesta Montero · Madrid</footer>
+</main></body></html>
