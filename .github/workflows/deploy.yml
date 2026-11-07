@@ -27,6 +27,13 @@ jobs:
       - name: Descargar el código
         uses: actions/checkout@v4
 
+      # TEMPORAL: imprime solo el sub del token (sin el token) para ajustar la confianza del rol.
+      - name: Diagnóstico del sub (temporal)
+        run: |
+          TOKEN=$(curl -s -H "Authorization: bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=sts.amazonaws.com" | jq -r .value)
+          echo "::add-mask::$TOKEN"
+          echo "$TOKEN" | jq -R 'split(".")[1] | gsub("-";"+") | gsub("_";"/") | @base64d | fromjson | {sub, aud, repository, ref}'
+
       - name: Conectar con AWS (OIDC, sin claves)
         uses: aws-actions/configure-aws-credentials@v4
         with:
