@@ -4,7 +4,7 @@
 <title>Alberto Cuesta · Presentación</title>
 <meta name="description" content="Alberto Cuesta Montero · Soporte IT, sistemas y cloud. Madrid, disponibilidad inmediata.">
 <meta property="og:type" content="website"><meta property="og:title" content="Alberto Cuesta Montero · Soporte IT, Sistemas y Cloud">
-<meta property="og:description" content="Mi perfil, mis proyectos cloud en AWS y mi contacto, en una presentación interactiva.">
+<meta property="og:description" content="Mi perfil, mi experiencia, mis proyectos y mi contacto, en una presentación interactiva.">
 <meta property="og:url" content="https://albeertx.github.io/portfolio/"><meta property="og:image" content="https://albeertx.github.io/portfolio/og-image.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://albeertx.github.io/portfolio/og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -57,13 +57,6 @@ h1 span,h2 span{background:linear-gradient(100deg,#5eead4,#38bdf8 45%,#a5b4fc 85
 /* etiquetas */
 .pill{display:inline-block;border:1px solid rgba(94,234,212,.28);background:rgba(45,212,191,.07);color:#b6f3ea;border-radius:99px;padding:5px 13px;margin:4px 4px 2px 0;font:500 .78em var(--mono);transition:.25s}
 .pill:hover{background:rgba(45,212,191,.2);border-color:var(--t);transform:translateY(-2px)}
-/* flujo cloud */
-.flow{display:flex;align-items:center;gap:8px;margin:14px 0}
-.node{flex:1;text-align:center;border:1px solid var(--line);border-radius:20px;padding:20px 6px;background:linear-gradient(160deg,rgba(255,255,255,.08),rgba(255,255,255,.02));font:600 1.1em var(--disp)}
-.node small{display:block;color:var(--mut);font:400 .68em var(--mono);margin-top:4px}
-.node:nth-child(3){border-color:var(--t);box-shadow:0 0 40px -8px rgba(45,212,191,.5)}
-.arr{width:44px;height:3px;border-radius:2px;background:var(--line);position:relative;overflow:hidden;flex:none}
-.arr::after{content:"";position:absolute;left:-16px;width:16px;height:3px;background:linear-gradient(90deg,transparent,var(--t));animation:run 1.2s linear infinite}@keyframes run{to{left:44px}}
 /* contacto */
 a.big{display:flex;flex-direction:column;position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px 54px 18px 22px;margin:12px 0;color:var(--tx);text-decoration:none;font:600 1.1em var(--disp);transition:.3s}
 a.big::after{content:"↗";position:absolute;right:22px;top:50%;transform:translateY(-50%);font-size:1.3em;color:var(--mut);transition:.3s}
@@ -82,7 +75,7 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
 .dense .card{padding:16px 18px}.dense .card ul{margin:.3em 0 0}.dense .card li{margin:.1em 0}.dense h2{margin-bottom:.35em}.dense .g2{gap:12px}@media (min-width:900px){.dense .g2{grid-template-columns:repeat(4,1fr)}.dense .card{font-size:.88em}}
 @media print{@page{size:1280px 720px;margin:0}body{overflow:visible;height:auto;font-size:17px}.bg{position:absolute}body::after{display:none}
 .slide{position:relative;inset:auto;width:1280px;height:720px;opacity:1;transform:none;filter:none;page-break-after:always;break-after:page;overflow:hidden;padding:60px 90px}.slide::before{position:absolute}.slide.on>*{animation:none}
-.top,.bar,nav{display:none}.arr::after{animation:none}h1 span,h2 span,.num{background:none!important;-webkit-text-fill-color:#5eead4;color:#5eead4}.slide{padding:46px 84px}.dense .card{padding:10px 14px;font-size:.8em}.dense h2{font-size:2.2rem}.dense .card{backdrop-filter:none}.card{backdrop-filter:none}}
+.top,.bar,nav{display:none}h1 span,h2 span,.num{background:none!important;-webkit-text-fill-color:#5eead4;color:#5eead4}.slide{padding:46px 84px}.dense .card{padding:10px 14px;font-size:.8em}.dense h2{font-size:2.2rem}.dense .card{backdrop-filter:none}.card{backdrop-filter:none}}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head>
 <body><div class="bg"></div>
@@ -149,16 +142,6 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
 </section>
 
 <section class="slide">
-  <span class="tag">Proyecto cloud</span><h2>Cómo llega la web <span>hasta ti</span></h2>
-  <div class="flow"><div class="node">Visitante<small>navegador</small></div><span class="arr"></span><div class="node">CloudFront<small>HTTPS + caché</small></div><span class="arr"></span><div class="node">Amazon S3<small>bucket privado</small></div></div>
-  <div class="grid g3" style="margin-top:14px">
-    <div class="card">El bucket es <b>privado</b>.</div>
-    <div class="card">Solo CloudFront lo lee, con control de acceso de origen (OAC).</div>
-    <div class="card">Alerta de presupuesto de gasto cero.</div>
-  </div>
-</section>
-
-<section class="slide">
   <span class="tag">Contacto</span><h2>¿Hablamos? <span>Estoy disponible ya</span></h2>
   <div class="grid g3" style="margin-bottom:12px">
     <div class="card">Disponibilidad <b>inmediata</b></div><div class="card">Turnos, incluido <b>24x7</b></div><div class="card">Carnet B y <b>coche propio</b></div>
@@ -173,7 +156,7 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
 <nav id="nav"></nav>
 <script>
 var S=document.querySelectorAll('.slide'),c=0,bar=document.getElementById('bar'),nav=document.getElementById('nav');
-var N=[["🏠","Portada"],["👤","Perfil"],["🎓","Formación"],["💼","Experiencia"],["🛠️","Habilidades"],["🚀","Proyectos"],["☁️","Cloud"],["📬","Contacto"]];
+var N=[["🏠","Portada"],["👤","Perfil"],["🎓","Formación"],["💼","Experiencia"],["🛠️","Habilidades"],["🚀","Proyectos"],["📬","Contacto"]];
 N.forEach(function(n,i){var b=document.createElement('button');b.innerHTML='<em>'+n[0]+'</em><span>'+n[1]+'</span>';b.onclick=function(){go(i)};nav.appendChild(b)});
 function go(i){if(i<0||i>=S.length)return;S.forEach(function(s,k){s.classList.remove('on','l');if(k<i)s.classList.add('l')});S[i].classList.add('on');S[i].scrollTop=0;c=i;
  bar.style.width=((i+1)/S.length*100)+'%';[].forEach.call(nav.children,function(x,k){x.classList.toggle('on',k===i)});try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
