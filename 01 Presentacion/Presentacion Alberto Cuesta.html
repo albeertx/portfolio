@@ -76,6 +76,7 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
 @media print{@page{size:1280px 720px;margin:0}body{overflow:visible;height:auto;font-size:17px}.bg{position:absolute}body::after{display:none}
 .slide{position:relative;inset:auto;width:1280px;height:720px;opacity:1;transform:none;filter:none;page-break-after:always;break-after:page;overflow:hidden;padding:60px 90px}.slide::before{position:absolute}.slide.on>*{animation:none}
 .top,.bar,nav{display:none}h1 span,h2 span,.num{background:none!important;-webkit-text-fill-color:#5eead4;color:#5eead4}.slide{padding:46px 84px}.dense .card{padding:10px 14px;font-size:.8em}.dense h2{font-size:2.2rem}.dense .card{backdrop-filter:none}.card{backdrop-filter:none}}
+.slide.done>*{animation:none!important}html.away *{animation-play-state:paused!important}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head>
 <body><div class="bg"></div>
@@ -144,7 +145,7 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
 </section>
 
 <section class="slide">
-  <span class="tag">Contacto</span><h2>¿Hablamos? <span>Estoy disponible ya</span></h2>
+  <span class="tag">Contacto</span><h2>¿Hablamos? <span>Busco mi oportunidad</span></h2>
   <div class="grid g3" style="margin-bottom:12px">
     <div class="card">Disponibilidad <b>inmediata</b></div><div class="card">Turnos, incluido <b>24x7</b></div><div class="card">Carnet B y <b>coche propio</b></div>
   </div>
@@ -160,11 +161,13 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
 var S=document.querySelectorAll('.slide'),c=0,bar=document.getElementById('bar'),nav=document.getElementById('nav');
 var N=[["🏠","Portada"],["👤","Perfil"],["🎓","Formación"],["💼","Experiencia"],["🛠️","Habilidades"],["🚀","Proyectos"],["📬","Contacto"]];
 N.forEach(function(n,i){var b=document.createElement('button');b.innerHTML='<em>'+n[0]+'</em><span>'+n[1]+'</span>';b.onclick=function(){go(i)};nav.appendChild(b)});
-function go(i){if(i<0||i>=S.length)return;S.forEach(function(s,k){s.classList.remove('on','l');if(k<i)s.classList.add('l')});S[i].classList.add('on');S[i].scrollTop=0;c=i;
+function go(i){if(i<0||i>=S.length)return;S.forEach(function(s,k){s.classList.remove('on','l','done');if(k<i)s.classList.add('l')});S[i].classList.add('on');clearTimeout(go.t);go.t=setTimeout(function(){S[i].classList.add('done')},1500);S[i].scrollTop=0;c=i;
  bar.style.width=((i+1)/S.length*100)+'%';[].forEach.call(nav.children,function(x,k){x.classList.toggle('on',k===i)});try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
-document.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')go(c+1);if(e.key==='ArrowLeft'||e.key==='PageUp')go(c-1)});
+document.addEventListener('keydown',function(e){if(e.altKey||e.ctrlKey||e.metaKey||e.shiftKey)return;if(e.key===' ')e.preventDefault();if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown')go(c+1);if(e.key==='ArrowLeft'||e.key==='PageUp')go(c-1)});
 var sx=null;document.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
 document.addEventListener('touchend',function(e){if(sx===null)return;var d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>70)go(c+(d<0?1:-1));sx=null});
+function away(a){document.documentElement.classList.toggle('away',a)}
+document.addEventListener('visibilitychange',function(){away(document.hidden)});window.addEventListener('blur',function(){away(true)});window.addEventListener('focus',function(){away(false)});
 var h=parseInt((location.hash||'').slice(1),10);go(h>0&&h<=S.length?h-1:0);
 
 var mail=document.getElementById('mail'),mt='albertocuesta02@gmail.com';
