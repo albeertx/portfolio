@@ -36,7 +36,7 @@ Se irán añadiendo como carpetas nuevas cuando estén hechos:
 - Laboratorio de Active Directory
 - Infraestructura como código con Terraform
 - Red segura de laboratorio: firewall, DMZ y VPN
-- Web para una peluquería
+- Web para una peluquería (en construcción, sin publicar)
 
 ## Contacto
 
