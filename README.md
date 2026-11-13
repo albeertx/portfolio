@@ -35,7 +35,7 @@ Se irán añadiendo como carpetas nuevas cuando estén hechos:
 
 - Laboratorio de Active Directory
 - Infraestructura como código con Terraform
-- Red segura de laboratorio: firewall, DMZ y VPN
+- Red segura de laboratorio: firewall OPNsense con LAN y DMZ (en construcción)
 - Web para una peluquería (en construcción, sin publicar)
 
 ## Contacto
