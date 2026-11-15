@@ -19,6 +19,7 @@ También alojada en AWS (S3 y CloudFront): https://dqy9jq042m8oh.cloudfront.net
 | [03 Servidor Linux en AWS](03%20Servidor%20Linux%20en%20AWS) | Ubuntu en EC2 con nginx, firewall, usuario sin permisos de administrador y SSH solo con clave. | [Abrir](https://albeertx.github.io/portfolio/03%20Servidor%20Linux%20en%20AWS/web/) |
 | [04 Publicacion automatica GitHub Actions](04%20Publicacion%20automatica%20GitHub%20Actions) | Al subir un cambio a GitHub, la presentación se publica sola en AWS (S3 y CloudFront), con acceso OIDC y sin claves guardadas. | [Abrir](https://albeertx.github.io/portfolio/04%20Publicacion%20automatica%20GitHub%20Actions/web/) |
 | [05 Sistema de tickets GLPI](05%20Sistema%20de%20tickets%20GLPI) | Help Desk con GLPI en una máquina virtual Ubuntu: entidades, categorías, 8 tickets de ejemplo y 4 guías de resolución de problemas. | [Abrir](https://albeertx.github.io/portfolio/05%20Sistema%20de%20tickets%20GLPI/web/) |
+| [06 Red segura de laboratorio](06%20Red%20segura%20de%20laboratorio) | Cortafuegos OPNsense con LAN, DMZ y VPN WireGuard en máquinas virtuales: reglas, 11 pruebas con capturas y registro de bloqueos. | [Abrir](https://albeertx.github.io/portfolio/06%20Red%20segura%20de%20laboratorio/web/) |
 
 Cada proyecto con página web tendrá aquí su enlace "Abrir", que se ve funcionando sin tener que leer el código.
 
@@ -35,7 +36,6 @@ Se irán añadiendo como carpetas nuevas cuando estén hechos:
 
 - Laboratorio de Active Directory
 - Infraestructura como código con Terraform
-- Red segura de laboratorio: firewall OPNsense con LAN y DMZ (en construcción)
 - Web para una peluquería (en construcción, sin publicar)
 
 ## Contacto

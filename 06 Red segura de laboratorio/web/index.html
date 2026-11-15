@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Red segura · Alberto Cuesta</title>
+<style>
+:root{--bg:#0a1020;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.13);--tx:#e8eefc;--mut:#9aa8c7;--a:#38bdf8;--b:#818cf8;--ok:#4ade80;--no:#f87171}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;color:var(--tx);font:17px/1.55 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;background:radial-gradient(900px 500px at 12% -10%,rgba(56,189,248,.17),transparent 60%),radial-gradient(800px 500px at 100% 110%,rgba(99,102,241,.15),transparent 60%),linear-gradient(180deg,#0a1020,#0b1324);background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:44px 44px;-webkit-mask-image:radial-gradient(ellipse at 30% 15%,#000,transparent 75%);mask-image:radial-gradient(ellipse at 30% 15%,#000,transparent 75%)}
+main{position:relative;max-width:980px;margin:0 auto;padding:40px 18px 60px}
+.live{display:inline-flex;gap:8px;align-items:center;font-size:.85rem;color:var(--ok);border:1px solid rgba(74,222,128,.4);padding:4px 12px;border-radius:99px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);animation:pu 1.6s infinite}
+@keyframes pu{0%{box-shadow:0 0 0 0 rgba(74,222,128,.7)}100%{box-shadow:0 0 0 10px rgba(74,222,128,0)}}
+h1{font-size:clamp(2.2rem,8vw,4rem);line-height:1.05;margin:.3em 0 .15em;font-weight:800}
+h1 span{background:linear-gradient(90deg,#7dd3fc,#38bdf8 45%,#818cf8);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:var(--mut);font-size:1.15rem;max-width:640px}
+.grid{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:28px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:20px;backdrop-filter:blur(6px);transition:.25s;animation:in .6s backwards}
+.card:hover{border-color:var(--a);transform:translateY(-3px)}
+@keyframes in{from{opacity:0;transform:translateY(14px)}}
+.card em{font-style:normal;font-size:1.6rem}
+.card h2{font-size:1.1rem;margin:.3em 0 .2em}
+.card p{margin:0;color:var(--mut);font-size:.95rem}
+h3{font-size:1.2rem;margin:34px 0 12px}
+.map{background:rgba(8,13,26,.8);border:1px solid var(--line);border-radius:16px;padding:10px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.map img{display:block;width:100%;height:auto;border-radius:10px}
+.tests{display:grid;gap:8px;margin:0;padding:0;list-style:none}
+.tests li{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 14px;display:flex;gap:12px;align-items:baseline;font-size:.95rem}
+.tests b{flex:none;font:700 .8rem ui-monospace,Consolas,monospace;padding:2px 9px;border-radius:99px}
+.tests .y{color:var(--ok);border:1px solid rgba(74,222,128,.4)}
+.tests .n{color:var(--no);border:1px solid rgba(248,113,113,.4)}
+.tests span{color:var(--mut)}
+.term{background:rgba(8,13,26,.8);border:1px solid var(--line);border-radius:16px;padding:16px 18px;font:14px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;overflow-x:auto;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.term .dots{display:flex;gap:7px;margin-bottom:10px}.term .dots i{width:11px;height:11px;border-radius:50%;background:#475569}.term .dots i:nth-child(1){background:#f87171}.term .dots i:nth-child(2){background:#fbbf24}.term .dots i:nth-child(3){background:#4ade80}
+.term u{text-decoration:none;color:var(--ok)}.term .o{color:var(--mut)}
+.btn{display:inline-block;margin-top:22px;padding:13px 20px;border-radius:14px;font-weight:700;text-decoration:none;color:#06101f;background:linear-gradient(90deg,var(--a),var(--b));transition:.2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(56,189,248,.35)}
+footer{margin-top:34px;color:var(--mut);font-size:.9rem}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.card{opacity:1}}
+</style></head>
+<body><main>
+  <span class="live">Laboratorio probado</span>
+  <h1>Red segura de <span>Alberto Cuesta</span></h1>
+  <p class="lead">Un cortafuegos con LAN, DMZ y VPN, montado en máquinas virtuales y probado regla a regla.</p>
+
+  <div class="grid">
+    <div class="card" style="animation-delay:.05s"><em>🛡️</em><h2>Cortafuegos</h2><p>OPNsense 26.7 con tres zonas: WAN, LAN y DMZ. Todo denegado salvo lo permitido.</p></div>
+    <div class="card" style="animation-delay:.15s"><em>🌐</em><h2>DMZ</h2><p>Servidor Debian con nginx en 192.168.20.10. No puede iniciar conexiones hacia la LAN.</p></div>
+    <div class="card" style="animation-delay:.25s"><em>💻</em><h2>LAN</h2><p>Cliente Debian con IP por DHCP. Abre la web de la DMZ y navega por los puertos 80 y 443.</p></div>
+    <div class="card" style="animation-delay:.35s"><em>🔐</em><h2>VPN WireGuard</h2><p>Túnel 10.10.10.0/24 por UDP 51820. Llega a la LAN y se queda fuera de la DMZ.</p></div>
+    <div class="card" style="animation-delay:.45s"><em>🧪</em><h2>Pruebas</h2><p>11 pruebas desde las propias máquinas, cada una con su captura.</p></div>
+    <div class="card" style="animation-delay:.55s"><em>💶</em><h2>Coste 0 €</h2><p>Hyper-V, OPNsense, Debian, nginx y WireGuard. Todo gratuito.</p></div>
+  </div>
+
+  <h3>Esquema</h3>
+  <div class="map">
+    <svg viewBox="0 0 900 340" role="img" aria-label="Esquema: Internet, OPNsense con LAN y DMZ, y túnel WireGuard" style="display:block;width:100%;height:auto" font-family="system-ui,Segoe UI,Arial,sans-serif">
+      <g fill="none" stroke-width="2">
+        <path d="M170 170 H330" stroke="#9aa8c7"/>
+        <path d="M570 100 H680" stroke="#4ade80"/>
+        <path d="M570 240 H680" stroke="#4ade80"/>
+        <path d="M450 80 V110" stroke="#818cf8" stroke-dasharray="6 5"/>
+      </g>
+      <g font-size="13" fill="#e8eefc" text-anchor="middle">
+        <rect x="30" y="135" width="140" height="70" rx="12" fill="#111a30" stroke="#475569"/>
+        <text x="100" y="165" font-weight="700">Internet</text><text x="100" y="186" fill="#9aa8c7">Default Switch (NAT)</text>
+        <rect x="330" y="90" width="240" height="160" rx="16" fill="#111a30" stroke="#38bdf8" stroke-width="2"/>
+        <text x="450" y="125" font-size="17" font-weight="700" fill="#7dd3fc">OPNsense</text>
+        <text x="450" y="148" fill="#9aa8c7">Cortafuegos · rutas · DHCP · DNS</text>
+        <text x="450" y="176">WAN 172.21.247.66 (DHCP)</text>
+        <text x="450" y="198">LAN 192.168.10.1/24</text>
+        <text x="450" y="220">DMZ 192.168.20.1/24</text>
+        <rect x="350" y="12" width="200" height="60" rx="12" fill="#111a30" stroke="#818cf8"/>
+        <text x="450" y="37" font-weight="700">WireGuard (UDP 51820)</text><text x="450" y="58" fill="#9aa8c7">Túnel 10.10.10.0/24 · PC .2</text>
+        <rect x="680" y="65" width="190" height="70" rx="12" fill="#111a30" stroke="#4ade80"/>
+        <text x="775" y="92" font-weight="700">Cliente LAN</text><text x="775" y="114" fill="#9aa8c7">Debian · DHCP</text>
+        <rect x="680" y="205" width="190" height="70" rx="12" fill="#111a30" stroke="#4ade80"/>
+        <text x="775" y="232" font-weight="700">Servidor web DMZ</text><text x="775" y="254" fill="#9aa8c7">nginx · 192.168.20.10</text>
+        <text x="625" y="90" fill="#4ade80" font-size="12">LAN</text>
+        <text x="625" y="230" fill="#4ade80" font-size="12">DMZ</text>
+        <text x="250" y="160" fill="#9aa8c7" font-size="12">WAN</text>
+      </g>
+    </svg>
+  </div>
+
+  <h3>Qué se permite y qué no</h3>
+  <ul class="tests">
+    <li><b class="y">SÍ</b>Cliente LAN → web de la DMZ <span>(80 y 443)</span></li>
+    <li><b class="y">SÍ</b>Cliente LAN → Internet <span>(80 y 443)</span></li>
+    <li><b class="y">SÍ</b>Servidor DMZ → Internet <span>(80 y 443, para actualizar)</span></li>
+    <li><b class="y">SÍ</b>VPN → LAN</li>
+    <li><b class="n">NO</b>DMZ → LAN <span>(ni web ni ping)</span></li>
+    <li><b class="n">NO</b>LAN → resto de la DMZ <span>(otros puertos y ping)</span></li>
+    <li><b class="n">NO</b>DMZ → resto de Internet</li>
+    <li><b class="n">NO</b>VPN → DMZ</li>
+  </ul>
+
+  <h3>Una prueba real</h3>
+  <div class="term">
+    <div class="dots"><i></i><i></i><i></i></div>
+    <div><u>$</u> curl -s -m 5 http://192.168.20.10:8080</div>
+    <div class="o">curl: (28) Connection timed out after 5002 milliseconds</div>
+    <div><u>$</u> curl -sI -m 8 https://deb.debian.org | head -n 1</div>
+    <div class="o">HTTP/2 200</div>
+    <div><u>C:\&gt;</u> ping 192.168.10.177 <span class="o">(con la VPN conectada)</span></div>
+    <div class="o">Respuesta desde 192.168.10.177: bytes=32 TTL=63</div>
+  </div>
+
+  <a class="btn" href="https://github.com/albeertx/portfolio/tree/main/06%20Red%20segura%20de%20laboratorio" target="_blank" rel="noopener">Ver el proyecto en GitHub</a>
+  <footer>Alberto Cuesta Montero · Madrid</footer>
+</main></body></html>
