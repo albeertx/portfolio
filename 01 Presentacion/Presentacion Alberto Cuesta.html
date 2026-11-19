@@ -76,6 +76,11 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
 @media print{@page{size:1280px 720px;margin:0}body{overflow:visible;height:auto;font-size:17px}.bg{position:absolute}body::after{display:none}
 .slide{position:relative;inset:auto;width:1280px;height:720px;opacity:1;transform:none;filter:none;page-break-after:always;break-after:page;overflow:hidden;padding:60px 90px}.slide::before{position:absolute}.slide.on>*{animation:none}
 .top,.bar,nav{display:none}h1 span,h2 span,.num{background:none!important;-webkit-text-fill-color:#5eead4;color:#5eead4}.slide{padding:46px 84px}.dense .card{padding:10px 14px;font-size:.8em}.dense h2{font-size:2.2rem}.dense .card{backdrop-filter:none}.card{backdrop-filter:none}}
+.st{font-weight:600;padding:1px 8px;border-radius:99px;border:1px solid}.st.ok{color:var(--ok);border-color:rgba(74,222,128,.4);background:rgba(74,222,128,.08)}.st.wip{color:var(--c);border-color:rgba(251,146,60,.4);background:rgba(251,146,60,.08)}.st.plan{color:var(--b);border-color:rgba(129,140,248,.45);background:rgba(129,140,248,.08)}
+a.go{display:inline-block;margin-top:10px;color:var(--t);font:500 .8em var(--mono);text-decoration:none;border-bottom:1px solid rgba(45,212,191,.4)}a.go::after{content:" ↗"}a.go:hover{color:#fff;border-color:#fff}
+.road h3 i{font-style:normal;font-family:var(--mono);color:var(--b);font-size:.8em;margin-right:6px}
+@media (min-width:900px){.dense .g3c{grid-template-columns:repeat(3,1fr)}.dense .road{grid-template-columns:repeat(3,1fr)}}
+@media (min-width:900px) and (max-width:1180px){nav button{padding:9px 9px;font-size:.78rem}}
 .slide.done>*{animation:none!important}html.away *{animation-play-state:paused!important}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style></head>
@@ -95,7 +100,7 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
   <div class="grid g3" style="margin-top:22px">
     <div class="card"><div class="num">3</div><small>titulaciones: SMIR, DAM y Máster en Cloud</small></div>
     <div class="card"><div class="num">2</div><small>prácticas en empresa</small></div>
-    <div class="card"><div class="num">5</div><small>proyectos propios</small></div>
+    <div class="card"><div class="num">5</div><small>proyectos terminados, 3 en curso y 9 planificados</small></div>
   </div>
 </section>
 
@@ -130,18 +135,39 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
 </section>
 
 <section class="slide dense">
-  <span class="tag">Proyectos</span><h2>Lo que <span>construyo</span></h2>
-  <div class="grid g2">
-    <div class="card"><h3>Web en AWS</h3><small>Terminado</small><ul><li>S3 privado + CloudFront con HTTPS.</li><li>Alerta de presupuesto de gasto cero.</li></ul></div>
-    <div class="card"><h3>Servidor Linux en AWS</h3><small>Terminado</small><ul><li>Ubuntu en EC2 con nginx.</li><li>Firewall, usuario sin admin y SSH solo con clave.</li></ul></div>
-    <div class="card"><h3>Publicación automática</h3><small>Terminado</small><ul><li>GitHub Actions publica en S3 y vacía CloudFront.</li><li>Acceso a AWS con OIDC, sin claves guardadas.</li></ul></div>
-    <div class="card"><h3>Sistema de tickets GLPI</h3><small>Terminado</small><ul><li>Help Desk en una máquina virtual Ubuntu.</li><li>Entidades, categorías, tickets de ejemplo y guías.</li></ul></div>
-    <div class="card"><h3>Automatización con IA</h3><small>En curso · 2026</small><ul><li>Aplicaciones de gestión con Claude Cowork.</li><li>Panel y agente de candidaturas.</li></ul></div>
-    <div class="card"><h3>Vídeos con IA</h3><small>En curso · 2026</small><ul><li>Imagen y vídeo con Higgsfield.</li><li>Voz con ElevenLabs, edición con CapCut.</li></ul></div>
-    <div class="card"><h3>Creación de páginas web a medida</h3><small>En curso · 2026</small><ul><li>Webs para negocios: una academia de refuerzo y una peluquería (borrador sin publicar).</li><li>Diseño propio y presentación personal publicada en GitHub Pages.</li></ul></div>
-    <div class="card"><h3>Red segura de laboratorio</h3><small>Terminado</small><ul><li>Firewall OPNsense con LAN, DMZ y VPN WireGuard.</li><li>11 pruebas con capturas y registro de bloqueos.</li></ul></div>
+  <span class="tag">Proyectos · Terminados</span><h2>Lo que ya he <span>construido</span></h2>
+  <div class="grid g2 g3c">
+    <div class="card"><h3>Web en AWS</h3><small><b class="st ok">Terminado</b></small><ul><li>S3 privado + CloudFront con HTTPS.</li><li>Alerta de presupuesto de gasto cero.</li></ul><a class="go" href="https://dqy9jq042m8oh.cloudfront.net" target="_blank" rel="noopener">Ver en vivo</a></div>
+    <div class="card"><h3>Servidor Linux en AWS</h3><small><b class="st ok">Terminado</b></small><ul><li>Ubuntu en EC2 con nginx.</li><li>Firewall, usuario sin admin y SSH solo con clave.</li></ul><a class="go" href="https://albeertx.github.io/portfolio/03%20Servidor%20Linux%20en%20AWS/web/" target="_blank" rel="noopener">Ver proyecto</a></div>
+    <div class="card"><h3>Publicación automática</h3><small><b class="st ok">Terminado</b></small><ul><li>GitHub Actions publica en S3 y vacía CloudFront.</li><li>Acceso a AWS con OIDC, sin claves guardadas.</li></ul><a class="go" href="https://albeertx.github.io/portfolio/04%20Publicacion%20automatica%20GitHub%20Actions/web/" target="_blank" rel="noopener">Ver proyecto</a></div>
+    <div class="card"><h3>Sistema de tickets GLPI</h3><small><b class="st ok">Terminado</b></small><ul><li>Help Desk en una máquina virtual Ubuntu.</li><li>Entidades, categorías, tickets de ejemplo y guías.</li></ul><a class="go" href="https://albeertx.github.io/portfolio/05%20Sistema%20de%20tickets%20GLPI/web/" target="_blank" rel="noopener">Ver proyecto</a></div>
+    <div class="card"><h3>Red segura de laboratorio</h3><small><b class="st ok">Terminado</b></small><ul><li>Firewall OPNsense con LAN, DMZ y VPN WireGuard.</li><li>11 pruebas con capturas y registro de bloqueos.</li></ul><a class="go" href="https://albeertx.github.io/portfolio/06%20Red%20segura%20de%20laboratorio/web/" target="_blank" rel="noopener">Ver proyecto</a></div>
   </div>
-  <div class="card" style="margin-top:14px"><h3>Próximos proyectos <small>(planificados)</small></h3><span class="pill">Laboratorio de Active Directory</span><span class="pill">Terraform</span></div>
+</section>
+
+<section class="slide dense">
+  <span class="tag">Proyectos · En curso</span><h2>En lo que estoy <span>trabajando</span></h2>
+  <div class="grid g2 g3c">
+    <div class="card"><h3>Automatización con IA</h3><small><b class="st wip">En curso</b> · 2026</small><ul><li>Aplicaciones de gestión con Claude Cowork y Python.</li><li>Panel y agente de candidaturas de empleo.</li></ul></div>
+    <div class="card"><h3>Páginas web a medida</h3><small><b class="st wip">En curso</b> · 2026</small><ul><li>Webs para negocios: una academia de refuerzo y una barbería (borradores sin publicar).</li><li>Esta presentación, publicada en GitHub Pages y AWS.</li></ul></div>
+    <div class="card"><h3>Vídeos con IA</h3><small><b class="st wip">En curso</b> · 2026</small><ul><li>Imagen y vídeo con Higgsfield.</li><li>Voz con ElevenLabs, edición con CapCut.</li></ul></div>
+  </div>
+</section>
+
+<section class="slide dense">
+  <span class="tag">Proyectos · Próximos</span><h2>Mi <span>hoja de ruta</span></h2>
+  <p style="margin:0 0 14px;color:var(--mut)">Planificados en este orden, según lo que más piden las ofertas de soporte y sistemas.</p>
+  <div class="grid g2 road">
+    <div class="card"><h3><i>01</i> Laboratorio de Active Directory</h3><small><b class="st plan">Planificado</b></small><ul><li>Dominio en Windows Server con Hyper-V: usuarios, grupos, GPO y cliente Windows 11.</li></ul></div>
+    <div class="card"><h3><i>02</i> Microsoft 365, Entra ID e Intune</h3><small><b class="st plan">Planificado</b></small><ul><li>Tenant de pruebas con usuarios, MFA, acceso condicional y gestión de dispositivos.</li></ul></div>
+    <div class="card"><h3><i>03</i> PowerShell para altas y bajas</h3><small><b class="st plan">Planificado</b></small><ul><li>Scripts que crean, cambian y dan de baja usuarios de AD desde un CSV, con informe.</li></ul></div>
+    <div class="card"><h3><i>04</i> Monitorización Zabbix + Grafana</h3><small><b class="st plan">Planificado</b></small><ul><li>Servidores y servicios del laboratorio con paneles y alertas por Telegram.</li></ul></div>
+    <div class="card"><h3><i>05</i> SIEM con Wazuh</h3><small><b class="st plan">Planificado</b></small><ul><li>Agentes en Windows y Linux y detección de ataques simulados.</li></ul></div>
+    <div class="card"><h3><i>06</i> Terraform</h3><small><b class="st plan">Planificado</b></small><ul><li>La web de AWS (S3 + CloudFront) descrita en código: se crea y se borra con un comando.</li></ul></div>
+    <div class="card"><h3><i>07</i> Automatización con Ansible</h3><small><b class="st plan">Planificado</b></small><ul><li>Configuración repetible de los servidores del laboratorio.</li></ul></div>
+    <div class="card"><h3><i>08</i> Backup y recuperación</h3><small><b class="st plan">Planificado</b></small><ul><li>Copias hacia S3, restauraciones probadas y plan de recuperación.</li></ul></div>
+    <div class="card"><h3><i>09</i> Docker y Kubernetes (k3s)</h3><small><b class="st plan">Planificado</b></small><ul><li>Servicios en contenedores con un clúster ligero e Ingress.</li></ul></div>
+  </div>
 </section>
 
 <section class="slide">
@@ -151,7 +177,7 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
   </div>
   <a class="big" href="tel:+34618117257">📞 Teléfono<small>+34 618 11 72 57</small></a>
   <a class="big" id="mail" href="mailto:albertocuesta02@gmail.com?subject=Oportunidad%20IT" title="Copia el correo y abre un mensaje nuevo">✉️ Correo<small>albertocuesta02@gmail.com</small></a>
-  <a class="big" href="https://github.com/albeertx/portfolio" target="_blank" rel="noopener">🐙 GitHub<small>github.com/albeertx/portfolio</small></a>
+  <a class="big" href="https://github.com/albeertx" target="_blank" rel="noopener">🐙 GitHub<small>github.com/albeertx</small></a>
   <a class="big" href="https://www.linkedin.com/in/alberto-cuesta-montero" target="_blank" rel="noopener">💼 LinkedIn<small>Alberto Cuesta Montero</small></a>
 </section>
 
@@ -159,7 +185,7 @@ nav button{max-width:none;padding:9px 15px;font-size:.84rem;border:0;background:
 <nav id="nav"></nav>
 <script>
 var S=document.querySelectorAll('.slide'),c=0,bar=document.getElementById('bar'),nav=document.getElementById('nav');
-var N=[["🏠","Portada"],["👤","Perfil"],["🎓","Formación"],["💼","Experiencia"],["🛠️","Habilidades"],["🚀","Proyectos"],["📬","Contacto"]];
+var N=[["🏠","Portada"],["👤","Perfil"],["🎓","Formación"],["💼","Experiencia"],["🛠️","Habilidades"],["✅","Hechos"],["⚙️","Ahora"],["🧭","Próximos"],["📬","Contacto"]];
 N.forEach(function(n,i){var b=document.createElement('button');b.innerHTML='<em>'+n[0]+'</em><span>'+n[1]+'</span>';b.onclick=function(){go(i)};nav.appendChild(b)});
 function go(i){if(i<0||i>=S.length)return;S.forEach(function(s,k){s.classList.remove('on','l','done');if(k<i)s.classList.add('l')});S[i].classList.add('on');clearTimeout(go.t);go.t=setTimeout(function(){S[i].classList.add('done')},1500);S[i].scrollTop=0;c=i;
  bar.style.width=((i+1)/S.length*100)+'%';[].forEach.call(nav.children,function(x,k){x.classList.toggle('on',k===i)});try{history.replaceState(null,'','#'+(i+1))}catch(e){}}

@@ -30,16 +30,28 @@ Cada proyecto con página web tendrá aquí su enlace "Abrir", que se ve funcion
 - Prácticas en ciberseguridad y desarrollo web (firewalls, DMZ, VPN) y en redes e infraestructura.
 - Inglés B2.
 
+## En curso
+
+- Automatización con IA: aplicaciones de gestión con Claude Cowork y Python, como un agente de candidaturas.
+- Páginas web a medida para negocios: una academia de refuerzo y una barbería (borradores sin publicar).
+- Vídeos con IA: imagen con Higgsfield, voz con ElevenLabs y edición con CapCut.
+
 ## Próximos proyectos (planificados)
 
-Se irán añadiendo como carpetas nuevas cuando estén hechos:
+Se irán añadiendo como carpetas nuevas cuando estén hechos, en este orden:
 
-- Laboratorio de Active Directory
-- Infraestructura como código con Terraform
-- Web para una peluquería (en construcción, sin publicar)
+1. Laboratorio de Active Directory (Windows Server, Hyper-V, GPO)
+2. Microsoft 365, Entra ID e Intune
+3. PowerShell para altas y bajas de usuarios desde CSV
+4. Monitorización con Zabbix y Grafana, con alertas por Telegram
+5. SIEM con Wazuh y ataques simulados
+6. Infraestructura como código con Terraform
+7. Automatización de servidores con Ansible
+8. Backup y recuperación ante desastres hacia S3
+9. Docker y Kubernetes ligero (k3s)
 
 ## Contacto
 
 - Correo: albertocuesta02@gmail.com
 - LinkedIn: https://www.linkedin.com/in/alberto-cuesta-montero
-- GitHub: https://github.com/albeertx/portfolio
+- GitHub: https://github.com/albeertx
